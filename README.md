@@ -1,3 +1,3 @@
 # TheOdinProject
 
-[https://amanmulchandani.github.io/TheOdinProject/Foundations/](Navigation)
+[Navigation](https://amanmulchandani.github.io/TheOdinProject/Foundations/)

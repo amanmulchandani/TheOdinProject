@@ -1,5 +1,8 @@
 :root {
-  --ff--primary: "Montserrat", sans-serif;
+  --clr-primary-400: hsla(0, 0%, 15%, 1);
+  --clr-neutral-100: hsla(0, 0%, 100%);
+
+  --ff-primary: "Montserrat", sans-serif;
 
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
@@ -12,10 +15,14 @@
 
   --fs-xxl: 4rem;
   --fs-xl: 3rem;
-  --fs-l: 1rem;
+  --fs-l: 1.5rem;
   --fs-m: 1.125rem;
   --fs-sm: 1rem;
   --fs-xs: 0.625rem;
+
+  --size-200: 2.5rem;
+  --size-400: 5rem;
+  --size-800: 12.5rem;
 }
 
 /* Andy Bell Reset */
@@ -53,7 +60,6 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -94,14 +100,201 @@ select {
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  /* font:inherit ; - Helps to reset all the font styling */
+}
+
+/* Geneal Styling*/
+body {
+  font-family: var(--ff-body);
+  color: var(--clr-primary-400);
+}
+
 /* Utility classes */
 
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+.fw-extrabold {
+  font-weight: var(--fw-Extrabold);
+}
+
+.fw-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-xxl {
+  font-size: var(--fs-xxl);
+}
+
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+
+.fs-l {
+  font-size: var(--fs-l);
+}
+
+.fs-m {
+  font-size: var(--fs-m);
+}
+
+.fs-sm {
+  font-size: var(--fs-sm);
+}
+
+.fs-xs {
+  font-size: var(--fs-xs);
+}
+
+.txt-capital {
+  text-transform: uppercase;
+}
+
+.fs-italic {
+  font-style: italic;
+}
+
+.margin-block-400 {
+  margin-block: var(--size-400);
+}
+
+.margin-block-200 {
+  margin-block: var(--size-200);
+}
+
 .container {
-  --max-width: 1110px;
-  --padding: 2rem;
+  --max-width: 1440px;
+  --padding: var(--size-400);
 
   width: min(var(--max-width), 100% - (var(--padding) * 2));
   /* Padding * 2 because we have to consider both sides. 
   1 times means removing 0.5rem from both sides */
   margin-inline: auto;
+}
+
+.even-columns {
+  display: flex;
+  gap: 2rem;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+/* Button */
+
+.button {
+  display: inline-flex;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+}
+
+.button[data-type="outline"] {
+  border: 1px solid var(--clr-neutral-100);
+}
+
+/* For Large screens */
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* Navigation */
+
+.primary-header {
+  padding-top: var(--size-200);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--size-400);
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: var(--fs-l);
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.05em;
+}
+
+.card {
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-image {
+  height: auto;
+  width: fit-content;
+
+  box-shadow: 0px 4px 4px rgba(245, 245, 245, 0.8);
+}
+
+.card-info {
+  padding: 30px 25px;
+}
+
+.quote {
+  background-color: #ff704c;
+  color: #342a3e;
+}
+
+.quote-text {
+  width: 385px;
+  padding: 52px 0px;
+  line-height: 59px;
+  letter-spacing: 0.015em;
+}
+
+.quote-text > span {
+  color: #fbffff;
+}
+
+/* CTA */
+
+.cta {
+  background: #252525;
+  color: var(--clr-neutral-100);
+  padding: 60px 80px;
+  border-radius: 10px;
+}
+
+footer {
+  background: #2e2e2e;
+  color: var(--clr-neutral-100);
+  padding-block: var(--size-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

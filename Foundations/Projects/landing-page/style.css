@@ -180,7 +180,7 @@ body {
 .margin-block-100 {
   margin-block: var(--size-100);
 }
-.margin-block-50 {
+.margin-top-50 {
   margin-top: var(--size-50);
 }
 .container {
